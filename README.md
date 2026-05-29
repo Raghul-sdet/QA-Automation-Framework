@@ -19,7 +19,7 @@ This is a robust, data-driven hybrid automation framework built from scratch. It
 4. **Professional Reporting:** Generates detailed `Automation_Report.html` with pass/fail metrics.
 
 ## ⚙️ How to Run Locally
-1. Clone the repository: `git clone https://github.com/raghul-sdet/Enterprise-QA-Automation-Framework.git`
+1. Clone the repository: `git clone https://github.com/raghul-sdet/QA-Automation-Framework.git`
 2. Import as a Maven Project in Eclipse/IntelliJ.
 3. Update Maven dependencies (`pom.xml`).
 4. Run `DatabaseHelper.java` to test the virtual backend setup.
