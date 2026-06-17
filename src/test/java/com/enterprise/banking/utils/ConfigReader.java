@@ -9,13 +9,19 @@ public class ConfigReader {
 
     static {
         try {
-            String path = "src/main/resources/config.properties";
-            FileInputStream input = new FileInputStream(path);
+            // CRITICAL JENKINS FIX:
+            // Use System.getProperty("user.dir") to dynamically find the project root directory
+            // This works flawlessly on both Local Eclipse and Jenkins Cloud Server
+            String path = System.getProperty("user.dir") + "/src/test/resources/config.properties";
+            
+            FileInputStream fis = new FileInputStream(path);
             properties = new Properties();
-            properties.load(input);
-            input.close();
+            properties.load(fis);
+            fis.close();
+            
         } catch (IOException e) {
-            throw new RuntimeException("Failed to load config.properties file.");
+            e.printStackTrace();
+            throw new RuntimeException("Failed to load config.properties file from path: " + System.getProperty("user.dir") + "/src/test/resources/config.properties");
         }
     }
 
